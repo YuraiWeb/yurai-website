@@ -1,0 +1,79 @@
+{
+  "name": "mainNavigation",
+  "cls": "main-navigation",
+  "showSearch": true,
+  "items": [{
+    "text": "Home",
+    "link": "/"
+  }, {
+    "text": "Downloads",
+    "link": "/downloads"
+  },{
+    "text": "Docs",
+    "link": "/docs",
+    "subItems": [{
+      "text": "Specs",
+      "link": "/specifications"
+    }, {
+      "text": "Api",
+      "link": "/api"
+    }]
+  }, {
+    "text": "Resources",
+    "link": "/resources",
+    "subItems": [{
+      "text": "Examples",
+      "link": "/examples"
+    }, {
+      "text": "Tutorials",
+      "link": "/tutorials"
+    }, {
+      "text": "Contribute",
+      "link": "/contribute"
+    }, {
+      "text": "Help",
+      "link": "/help"
+    }, {
+      "text": "FAQ",
+      "link": "/faq"
+    }, {
+      "text": "The D Programming Langauge",
+      "link": "https://dlang.org/"
+    }, {
+      "text": "vibe.d",
+      "link": "https://vibed.org/"
+    }]
+  }, {
+    "text": "Blog",
+    "link": "/blog"
+  }, {
+    "text": "Community",
+    "subItems": [{
+      "text": "Sponsors",
+      "icon": "fad fa-heart-circle",
+      "iconColor1": "#F1948A",
+      "iconColor2": "#EC7063",
+      "link": "/sponsors"
+    }, {
+      "isDivider": true
+    }, {
+      "text": "Github",
+      "link": "https://github.com/YuraiWeb/yurai"
+    }, {
+      "text": "Discord",
+      "link": "https://discord.com/invite/UTysCSH"
+    }, {
+      "text": "Facebook",
+      "link": "https://www.facebook.com/yuraiwebframework"
+    }, {
+      "text": "Dlang Forum",
+      "link": "https://forum.dlang.org/"
+    }]
+  }, {
+    "text": "About",
+    "link": "/about"
+  }, {
+    "text": "Contact",
+    "link": "/contact"
+  }]
+}

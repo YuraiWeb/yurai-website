@@ -1,0 +1,14 @@
+.main-navigation {
+  background-color: rgb(221,254,228) !important;
+  padding-top: 0;
+}
+
+.main-navigation .navbar-brand img {
+  height: 42px;
+  width: auto;
+}
+
+.main-navigation .navbar-collapse,
+.main-navigation .navbar-toggler {
+  margin-top: 7px;
+}

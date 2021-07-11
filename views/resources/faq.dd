@@ -1,0 +1,6 @@
+@[name: gaq]
+@#(title | FAQ)
+@[layout: layout]
+@[route: resources/faq]
+
+<p>Coming soon</p>

@@ -1,0 +1,40 @@
+module yurai.prebuild.views.view_help;
+
+import yurai;
+
+import models;
+
+public final class view_help : View
+{
+  public:
+  
+  final:
+  this(IHttpRequest request, IHttpResponse response)
+  {
+    super("help", request,response, [`resources/help`]);
+  }
+
+  override ViewResult generate(bool processLayout)
+  {
+    
+
+    return generateFinal(processLayout);
+  }
+  ViewResult generateModel()
+  {
+    
+    return generateFinal(true);
+  }
+  override ViewResult generateFinal(bool processLayout)
+  {
+    setPlaceholder(`title`, `Help`);
+    append(`
+
+<p>Coming soon</p>
+`);
+
+    
+
+    return finalizeContent(`layout`,processLayout);
+  }
+}

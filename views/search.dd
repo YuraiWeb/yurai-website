@@ -1,0 +1,29 @@
+@[name: search]
+@[layout: layout]
+@[route: search]
+@[controller: SearchController]
+@[model: string[]]
+
+@{
+  auto searchQuery = request.getQuery("q");
+  if (!searchQuery)
+  {
+    searchQuery = "";
+  }
+}
+
+<h2>Search</h2>
+
+<div class="search-result">
+  <div class="search-result-query">
+    Search query: <span>@$=searchQuery;</span>
+  </div>
+  <div class="search-result-total">
+    Total results: <span class="search-result-count">@=model.length;</span>
+  </div>
+  <ul class="search-result-list">
+    @:foreach (result; model) {
+      <li><a href="@=result;">@=result;</a></li>
+    }
+  </ul>
+</div>

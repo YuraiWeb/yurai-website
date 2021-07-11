@@ -1,0 +1,117 @@
+@[name: specifications]
+@#(title | Specifications)
+@[layout: layout]
+@[route: docs/specifications]
+@[route: docs/specifications/acl]
+@[route: docs/specifications/actions]
+@[route: docs/specifications/advanced-web]
+@[route: docs/specifications/authentication]
+@[route: docs/specifications/backend]
+@[route: docs/specifications/backups]
+@[route: docs/specifications/basics]
+@[route: docs/specifications/configurations]
+@[route: docs/specifications/controllers]
+@[route: docs/specifications/cookies]
+@[route: docs/specifications/csrf-protection]
+@[route: docs/specifications/custom-logging]
+@[route: docs/specifications/data]
+@[route: docs/specifications/database-logging]
+@[route: docs/specifications/database-mysql-orm]
+@[route: docs/specifications/error-handling]
+@[route: docs/specifications/file-logging]
+@[route: docs/specifications/frontend]
+@[route: docs/specifications/http-request]
+@[route: docs/specifications/http-response]
+@[route: docs/specifications/http-server]
+@[route: docs/specifications/layouts]
+@[route: docs/specifications/logging]
+@[route: docs/specifications/mails]
+@[route: docs/specifications/mapping]
+@[route: docs/specifications/mocking]
+@[route: docs/specifications/models]
+@[route: docs/specifications/mongodb]
+@[route: docs/specifications/network]
+@[route: docs/specifications/partial-views]
+@[route: docs/specifications/project-setup]
+@[route: docs/specifications/publishing-cloud]
+@[route: docs/specifications/publishing]
+@[route: docs/specifications/redirections]
+@[route: docs/specifications/rest]
+@[route: docs/specifications/routing]
+@[route: docs/specifications/security]
+@[route: docs/specifications/seo]
+@[route: docs/specifications/sessions]
+@[route: docs/specifications/setup]
+@[route: docs/specifications/static-files]
+@[route: docs/specifications/templates-syntax]
+@[route: docs/specifications/transactions]
+@[route: docs/specifications/unittesting]
+@[route: docs/specifications/upload]
+@[route: docs/specifications/validation]
+@[route: docs/specifications/version-control]
+@[route: docs/specifications/view-integration]
+@[route: docs/specifications/view-models]
+@[route: docs/specifications/views]
+@[route: docs/specifications/virtual-html-elements]
+@[route: docs/specifications/web-api]
+@[route: docs/specifications/websockets]
+
+@{
+  string docName = request.path[$-1];
+
+  SideMenu sideMenu;
+  string[] errorMessages;
+  auto parsedMenu = deserializeJsonSafe!SideMenu(readText("config/specificationsmenu.json"), sideMenu, errorMessages);
+
+  if (!parsedMenu || (errorMessages && errorMessages.length))
+  {
+    parsedMenu = false;
+    writeln(errorMessages);
+  }
+
+  import vibe.textfilter.markdown;
+
+  auto docPath = "docs/" ~ docName ~ ".md";
+
+  string html;
+  if (exists(docPath)) {
+    html = filterMarkdown(readText(docPath), MarkdownFlags.backtickCodeBlocks | MarkdownFlags.tables);
+  }
+  else
+  {
+    html = "Missing documentation: " ~ docName;
+  }
+}
+
+<div class="row">
+
+  @<codehighlight>
+
+  @:if (parsedMenu) {
+    @<sidemenu: sideMenu>
+  }
+
+  <div class="side-menu-content col-md-8 col-sm-12">
+    <div>
+      @:auto pathBuilder = "";
+
+      @:foreach (i; 0 .. request.path.length) {
+        @:if (i > 0) {
+          @:auto path = request.path[i-1];
+          @:pathBuilder ~= "/" ~ path;
+
+          <a href="@$=pathBuilder;">@=path;</a> →
+        }
+      }
+
+      @:auto lastPath = request.path[$-1];
+      @:pathBuilder ~= "/" ~ lastPath;
+
+      <a href="@$=pathBuilder;">@=lastPath;</a>
+    </div>
+
+    <div>
+      @$=html;
+    </div>
+  </div>
+</div>

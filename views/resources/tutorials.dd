@@ -1,0 +1,6 @@
+@[name: tutorials]
+@#(title | Tutorials)
+@[layout: layout]
+@[route: resources/tutorials]
+
+<p>Coming soon</p>

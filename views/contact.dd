@@ -1,0 +1,6 @@
+@[name: contact]
+@#(title | Contact)
+@[layout: layout]
+@[route: contact]
+
+<p>Coming soon</p>

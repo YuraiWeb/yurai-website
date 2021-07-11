@@ -1,0 +1,6 @@
+@[name: help]
+@#(title | Help)
+@[layout: layout]
+@[route: resources/help]
+
+<p>Coming soon</p>

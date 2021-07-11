@@ -1,0 +1,6 @@
+@[name: api]
+@[layout: layout]
+@[route: docs/api]
+@#(title | Api)
+
+<p>Coming soon</p>

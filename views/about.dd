@@ -1,0 +1,6 @@
+@[name: about]
+@#(title | About)
+@[layout: layout]
+@[route: about]
+
+<p>Coming soon</p>

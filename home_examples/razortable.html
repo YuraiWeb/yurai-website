@@ -1,0 +1,207 @@
+<div class="table-responsive-content"><table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Syntax</th>
+      <th scope="col">ASP.NET Core (Razor)</th>
+      <th scope="col">Yurai</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Escaping @
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@@</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>\@</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Implicit expressions
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@Foo.Bar</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@=Foo.Bar;</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Explicit expressions
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@(Foo.Bar - Baz.Boo)</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@=Foo.Bar - Baz.Boo;</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Expression encoding
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@("&lt;span&gt;Hello World&lt;/span&gt;")</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@="&lt;span&gt;Hello World&lt;/span&gt;";</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Raw expressions
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@Html.Raw("&lt;span&gt;Hello World&lt;/span&gt;")</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@$="&lt;span&gt;Hello World&lt;/span&gt;";</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Code blocks
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@{
+    var quote = "The future depends on what you do today. - Mahatma Gandhi";
+}
+
+&lt;p&gt;@quote&lt;/p&gt;</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@{
+	auto quote = "The future depends on what you do today. - Mahatma Gandhi";
+}
+
+&lt;p&gt;@=quote;&lt;/p&gt;</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Local functions with markup
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@{
+	void RenderName(string name)
+	{
+		&lt;p&gt;Name: &lt;strong&gt;@name&lt;/strong&gt;&lt;/p&gt;
+	}
+
+	RenderName("Mahatma Ghandi");
+	RenderName("Martin Luther King, Jr.");
+}</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@:void RenderName(string name) {
+	&lt;p&gt;Name: &lt;strong&gt;@=name;&lt;/strong&gt;&lt;/p&gt;
+}
+
+@:RenderName("Mahatma Ghandi");
+@:RenderName("Martin Luther King, Jr.");</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Scoped expressions
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@for (var i = 0; i &lt; people.Length; i++)
+{
+	var person = people[i];
+	&lt;text&gt;Name: @person.Name&lt;/text&gt;
+}</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@:foreach (i; 0 .. people.length) {
+	@:auto person = people[i];
+	Name: @=person.name;
+}</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Scoped expressions (explicit transition)
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@for (var i = 0; i &lt; people.Length; i++)
+{
+	var person = people[i];
+	@:Name: @person.Name&lt;/text&gt;
+}</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@:foreach (i; 0 .. people.length) {
+	@:auto person = people[i];
+	Name: @=person.name;
+}</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Comments
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@*
+
+	Comment here
+
+*@</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@*
+
+	Comment here
+
+*@</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Metadata (layout)
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@{
+	Layout = "_Layout.cshtml"
+}</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@[layout: layout]</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Metadata (model)
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@model MyModel</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@[model: MyModel]</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Sections
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@section Scripts {
+    &lt;script type="text/javascript" src="~/scripts/main.js"&gt;&lt;/script&gt;
+}</code></pre>
+        <br>
+        <pre class="prettyprint"><code>@RenderSection("Scripts", required: false)</code></pre>
+      </td>
+      <td>
+        <pre class="prettyprint"><code>@[section: Scripts]
+&lt;script type="text/javascript" src="~/scripts/main.js"&gt;&lt;/script&gt;
+@[section: *]</code></pre>
+        <br>
+        <pre class="prettyprint"><code>@(section: Scripts)</code></pre>
+      </td>
+    </tr>
+  </tbody>
+</table></div>

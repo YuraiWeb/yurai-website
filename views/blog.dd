@@ -1,0 +1,6 @@
+@[name: blog]
+@#(title | Blog)
+@[layout: layout]
+@[route: blog]
+
+<p>Coming soon</p>

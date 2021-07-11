@@ -1,0 +1,6 @@
+@[name: downloads]
+@#(title | Downloads)
+@[layout: layout]
+@[route: downloads]
+
+<p>Coming soon</p>

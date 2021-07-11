@@ -1,0 +1,212 @@
+{
+  "title": "Specifications",
+  "basePath": "/docs/specifications",
+  "items": [{
+    "text": "Intermediate",
+    "icon": "fad fa-brain",
+    "links": [{
+      "link": "/basics",
+      "text": "Basics"
+    }, {
+      "link": "/project-setup",
+      "text": "Project Setup"
+    }, {
+      "link": "/configurations",
+      "text": "Configurations"
+    }]
+  }, {
+    "text": "Models",
+    "icon": "fad fa-leaf",
+    "links": [{
+      "link": "/models",
+      "text": "Basics"
+    }]
+  }, {
+    "text": "Views",
+    "icon": "fad fa-image",
+    "links": [{
+      "link": "/views",
+      "text": "Basics"
+    }, {
+      "link": "/templates-syntax",
+      "text": "Templates & Syntax"
+    }, {
+      "link": "/layouts",
+      "text": "Layouts"
+    }, {
+      "link": "/view-models",
+      "text": "View Models"
+    }, {
+      "link": "/partial-views",
+      "text": "Partial Views"
+    }]
+  }, {
+    "text": "Controllers",
+    "icon": "fad fa-memory",
+    "links": [{
+      "link": "/controllers",
+      "text": "Controllers"
+    }, {
+      "link": "/setup",
+      "text": "Setup"
+    }, {
+      "link": "/mapping",
+      "text": "Mapping"
+    }, {
+      "link": "/actions",
+      "text": "Actions"
+    }, {
+      "link": "/view-integration",
+      "text": "View Integration"
+    }, {
+      "link": "/version-control",
+      "text": "Version Control"
+    }]
+  }, {
+    "text": "Files",
+    "icon": "fad fa-copy",
+    "links": [{
+      "link": "/static-files",
+      "text": "Static Files"
+    }, {
+      "link": "/upload",
+      "text": "Upload"
+    }]
+  }, {
+    "text": "Frontend",
+    "icon": "fad fa-pen-nib",
+    "links": [{
+      "link": "/frontend",
+      "text": "Basics"
+    }, {
+      "link": "/virtual-html-elements",
+      "text": "Virtual Html Elements"
+    }]
+  }, {
+    "text": "Backend",
+    "icon": "fad fa-server",
+    "links": [{
+      "link": "/backend",
+      "text": "Basics"
+    }, {
+      "link": "/web-api",
+      "text": "Web API"
+    }, {
+      "link": "/rest",
+      "text": "REST"
+    }]
+  }, {
+    "text": "Data",
+    "icon": "fad fa-database",
+    "links": [{
+      "link": "/data",
+      "text": "Basics"
+    }, {
+      "link": "/cookies",
+      "text": "Cookies"
+    }, {
+      "link": "/sessions",
+      "text": "Sessions"
+    }, {
+      "link": "/database-mysql-orm",
+      "text": "Database & ORM (Mysql)"
+    }, {
+      "link": "/mongodb",
+      "text": "Mongodb"
+    }, {
+      "link": "/transactions",
+      "text": "Transactions"
+    }]
+  }, {
+    "text": "Security",
+    "icon": "fad fa-shield-check",
+    "links": [{
+      "link": "/security",
+      "text": "Basics"
+    }, {
+      "link": "/acl",
+      "text": "Access Control List (ACL)"
+    }, {
+      "link": "/authentication",
+      "text": "Authentication"
+    }, {
+      "link": "/csrf-protection",
+      "text": "CSRF Protection"
+    }, {
+      "link": "/validation",
+      "text": "Validation"
+    }, {
+      "link": "/network",
+      "text": "Network"
+    }, {
+      "link": "/backups",
+      "text": "Backups"
+    }]
+  }, {
+    "text": "Advanced Web",
+    "icon": "fad fa-globe-americas",
+    "links": [{
+      "link": "/advanced-web",
+      "text": "Basics"
+    }, {
+      "link": "/http-request",
+      "text": "HTTP Request"
+    }, {
+      "link": "/http-response",
+      "text": "HTTP Response"
+    }, {
+      "link": "/http-server",
+      "text": "HTTP Server"
+    }, {
+      "link": "/redirections",
+      "text": "Redirections"
+    }, {
+      "link": "/routing",
+      "text": "Routing"
+    }, {
+      "link": "/websockets",
+      "text": "Websockets"
+    }, {
+      "link": "/seo",
+      "text": "SEO"
+    }, {
+      "link": "/publishing",
+      "text": "Publishing"
+    }, {
+      "link": "/publishing-cloud",
+      "text": "Publishing (Cloud)"
+    }]
+  }, {
+    "text": "Logging",
+    "icon": "fad fa-flag",
+    "links": [{
+      "link": "/logging",
+      "text": "Basics"
+    }, {
+      "link": "/file-logging",
+      "text": "File Logging"
+    }, {
+      "link": "/database-logging",
+      "text": "Database Logging"
+    }, {
+      "link": "/custom-logging",
+      "text": "Custom Logging"
+    }]
+  }, {
+    "text": "Extra",
+    "icon": "fad fa-stars",
+    "links": [{
+      "link": "/error-handling",
+      "text": "Error Handling"
+    }, {
+      "link": "/unittesting",
+      "text": "Unittesting"
+    }, {
+      "link": "/mocking",
+      "text": "Mocking"
+    }, {
+      "link": "/mails",
+      "text": "Mails"
+    }]
+  }]
+}

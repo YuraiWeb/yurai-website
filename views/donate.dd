@@ -1,0 +1,6 @@
+@[name: donate]
+@#(title | Donate)
+@[layout: layout]
+@[route: donate]
+
+<p>Coming soon</p>

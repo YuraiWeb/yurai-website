@@ -1,0 +1,32 @@
+{
+  "name": "yuraiwebsite",
+  "targetType": "executable",
+  "sourcePaths": [
+    "source",
+    "prebuild",
+    "models",
+    "controllers"
+  ],
+  "versions": [
+    "YURAI_DEBUG",
+    "YURAI_VIBE_D",
+    "YURAI_MYSQL",
+    "YURAI_VIBE_D_MAIL"
+  ],
+  "dependencies": {
+    "yurai": "~>0.0.2",
+    "vibe-d": "~>0.9.3",
+    "mysql-native": "~>3.0.2"
+  },
+  "configurations": [{
+    "name": "prebuild_yurai",
+    "versions": [
+      "YURAI_PREBUILD"
+    ]
+  }, {
+    "name": "run_yurai",
+    "versions": [
+      "YURAI_RUN"
+    ]
+  }]
+}

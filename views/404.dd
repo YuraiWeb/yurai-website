@@ -1,0 +1,6 @@
+@[name: 404]
+@#(title | Not Found)
+@[layout: layout]
+@[model: string]
+
+<p>Not Found</p>
